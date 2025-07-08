@@ -4,7 +4,7 @@ const authCheck = require('../Middleware/authCheck');
 
 const router = express.Router();
 
-/* create ticket (used by SupportRequest.jsx) */
+
 router.post('/', authCheck, async (req, res) => {
   try {
     const { device, issue } = req.body;
@@ -22,7 +22,7 @@ router.post('/', authCheck, async (req, res) => {
   }
 });
 
-/* list tickets for current user (schedule page) */
+
 router.get('/', authCheck, async (req, res) => {
   const tickets = await prisma.ticket.findMany({
     where: { customerId: req.user.id },

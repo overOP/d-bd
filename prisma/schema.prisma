@@ -1,6 +1,4 @@
-// ──────────────────────────────────────────────────────────────
-//  prisma/schema.prisma
-// ──────────────────────────────────────────────────────────────
+
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
@@ -93,7 +91,7 @@ model Job {
 
   /// optional one‑to‑one link back to Ticket
   ticket   Ticket? @relation(fields: [ticketId], references: [id])
-  ticketId String? @unique // <-- add @unique here ✅
+  ticketId String? @unique 
 
   /// optional staff assignment
   assignedTo   User?   @relation("UserAssignedJobs", fields: [assignedToId], references: [id])

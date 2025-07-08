@@ -4,7 +4,7 @@ const authCheck = require('../Middleware/authCheck');
 
 const router = express.Router();
 
-/* simple aggregate counts – extend as you wish */
+
 router.get('/dashboard', authCheck, async (_, res) => {
   try {
     const [ticketCount, userCount, spareCount, quoteCount] =
@@ -21,7 +21,7 @@ router.get('/dashboard', authCheck, async (_, res) => {
       userList:        userCount,
       spareList:       spareCount,
 
-      /* placeholders for % deltas so your UI doesn’t break */
+
       percentages:        0,
       repairPercentage:   0,
       userPercentage:     0,
